@@ -45,6 +45,33 @@ header-includes:
 
 # Section 3
 
+```{r}
+library(tidyverse)
+```
+
+```{r}
+df <- read_csv("Data/Data_Tables_Criminal_Incidents_Visualisation_Year_Ending_December_2019.csv") %>% 
+  rename("offence_division" = "Offence Division") %>% 
+  rename("offence_subdivision" = "Offence Subdivision") %>% 
+  rename("incidents_recorded" = "Incidents Recorded")
+
+unique(df$offence_division)
+```
+
+```{r}
+offence <- df %>% 
+  filter(offence_division == "C Drug offences")
+```
+
+```{r}
+ggplot(offence, aes(x = Year, 
+                    y = incidents_recorded,
+                    fill = offence_subdivision)) +
+  geom_bar(stat = "identity",
+           position = "dodge")
+  
+```
+
 
 \clearpage
 
