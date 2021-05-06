@@ -1,6 +1,6 @@
 ---
 title: "Tutorial 9"
-author: "XXXX"
+author: "Mengyun yang"
 output:
   pdf_document:
     citation_package: natbib
@@ -34,6 +34,17 @@ header-includes:
 \clearpage
 
 # Section 1
+
+```{r}
+crime_data <- read.csv("data/Data_Tables_Criminal_Incidents_Visualisation_Year_Ending_December_2019.csv")
+```
+
+```{r}
+crime_data %>% filter(Offence.Division == "B Property and deception offences") %>% 
+  group_by(Year) %>% 
+  summarise(count = sum(Incidents.Recorded))
+```
+
 
 
 \clearpage
