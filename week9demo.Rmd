@@ -50,6 +50,20 @@ header-includes:
 
 # Section 4
 
+```{r, include = FALSE}
+library(tidyverse)
+library(readr)
+library(kableExtra)
+
+data <- read_csv("Data/Data_Tables_Criminal_Incidents_Visualisation_Year_Ending_December_2019.csv") 
+
+data <- data %>% 
+  rename('Offence_category' = 'Offence Division')
+
+data_person <- data %>% 
+  dplyr::filter(Offence_category == "A Crimes against the person") 
+
+```
 
 \clearpage
 
