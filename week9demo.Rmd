@@ -40,7 +40,9 @@ header-includes:
 
 # Section 2
 
-
+```{r echo=FALSE}
+data <- read_csv("Data/Data_Tables_Criminal_Incidents_Visualisation_Year_Ending_December_2019.csv")
+```
 \clearpage
 
 # Section 3
@@ -50,8 +52,6 @@ header-includes:
 
 # Section 4
 
-
-\clearpage
 
 # Citation examples
 
